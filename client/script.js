@@ -1,6 +1,7 @@
 import bot from './assets/bot.png';
 import user from './assets/user.png';
 
+const API_URL = 'https://open-ai-test-yg1v.onrender.com'
 const form = document.querySelector('form');
 const chatContainer = document.querySelector('#chat-container')
 
@@ -82,7 +83,7 @@ const handleSubmit = async (e) => {
     // messageDiv.innerHTML = "..."
     loader(messageDiv)
 
-    const response = await fetch('http://localhost:5000', {
+    const response = await fetch(API_URL, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
