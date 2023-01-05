@@ -11,7 +11,10 @@ const config = new Configuration({
 
 const openAi = new OpenAIApi(config)
 const app = express();
-app.use(cors());
+app.use(cors({
+    origin: 'https://openai-sample.vercel.app'
+}));
+
 app.use(express.json());
 
 app.get('/', async(req, res) => {
