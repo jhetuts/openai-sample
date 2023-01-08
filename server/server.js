@@ -11,8 +11,9 @@ const config = new Configuration({
 
 const openAi = new OpenAIApi(config)
 const app = express();
+
 app.use(cors({
-    origin: 'https://openai-sample.vercel.app'
+    origin: process.env.ENV && process.env.ENV === 'dev' ? 'http://localhost:5173' : 'https://openai-sample.vercel.app'
 }));
 
 app.use(express.json());

@@ -1,8 +1,8 @@
 import bot from './assets/bot.png';
 import user from './assets/user.png';
 
-const API_URL = 'https://open-ai-test-yg1v.onrender.com/generate-image'
-// const API_URL = 'http://localhost:5000/generate-image'
+// const API_URL = 'https://open-ai-test-yg1v.onrender.com/generate-image'
+const API_URL = 'http://localhost:5000/generate-image'
 const form = document.querySelector('#generate-image-form');
 const chatContainer = document.querySelector('#chat-container')
 
@@ -24,7 +24,7 @@ function typeText(element, images) {
     if(images && images.length) {
         let listOfimages = ''
         for(let i = 0; i< images.length; i++) {
-            listOfimages+= `<p key="${i}"><img src="${images[i].url}" alt="" /></p>`
+            listOfimages+= `<p key="${i}"><img src="${images[i].url}" alt="" /><a href="${images[i].url}" target="_blank">Open in new tab</a></p>`
         }
         element.innerHTML = `
             <div class="response-images">
@@ -33,6 +33,8 @@ function typeText(element, images) {
         `
         console.log(element.innerHTML)
     }
+
+    setTimeout(() => element.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" }), 2000)
 }
 
 function generateUniqueId() {
@@ -115,7 +117,10 @@ const handleSubmit = async (e) => {
 
 form.addEventListener('submit', handleSubmit)
 form.addEventListener('keyup', (e) => {
+    console.log(e)
     if (e.keyCode === 13) {
+        
+        e.preventDefault()
         handleSubmit(e)
     }
 })

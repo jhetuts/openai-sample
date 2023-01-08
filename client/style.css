@@ -169,14 +169,35 @@ form img {
 
 }
 .response-images p {
+  position: relative;
   max-width: calc(50% - 20px);
-  border: 0.4rem solid #000;
+  border: 0.4rem solid #343541;
   margin: 10px 10px 0 0;
 }
+.response-images p a {
+  display: none;
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  color: #111;
+  font-size: 12px;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 5px;
+  text-decoration: none;
+  border-radius: 4px;
+}
+.response-images p:hover > a {
+  display: block;
+}
+.response-images p a:hover {
+  background-color: rgba(255, 255, 255);
+}
+
 .response-images img {
   display: block;
   width: 100%;
 }
+
 header {
   color: #eee;
   display: flex;
