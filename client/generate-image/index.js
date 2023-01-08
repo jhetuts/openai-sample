@@ -1,5 +1,5 @@
-import bot from './assets/bot.png';
-import user from './assets/user.png';
+import bot from '../assets/bot.png';
+import user from '../assets/user.png';
 
 // const API_URL = 'https://open-ai-test-yg1v.onrender.com/generate-image'
 const API_URL = 'http://localhost:5000/generate-image'
