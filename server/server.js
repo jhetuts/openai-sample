@@ -51,5 +51,22 @@ app.post('/', async(req, res) => {
     }
 })
 
+app.post('/generate-image', async (req, res) => {
+    try {
+        const { prompt } = req.body
+        const response = await openAi.createImage({
+            prompt,
+            n: 4,
+            size: "1024x1024"
+        });
+        
+        res.status(200).send({
+            bot: response.data
+        })
+    } catch (error) {
+        console.error(error)
+        res.status(error.code || 500).send(error)
+    }
+})
 
 app.listen(5000, () => console.log("Server is running on port http://localhost:5000"))

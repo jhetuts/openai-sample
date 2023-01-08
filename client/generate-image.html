@@ -3,24 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CHAT GPT - Trying out OPEN AI</title>
+    <title>Open AI - Generate Image</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div id="app">
-      <header>
-        <h1>Ask me anything</h1>
-        <a class="menu" href="generate-image.html">Generate Image</a>
-      </header>
-      
+        <header>
+            <h1>Generate Image</h1>
+            <a class="menu" href="/">Go to Chat</a>
+        </header>
       <div id="chat-container"></div>
 
-      <form>
-        <textarea name="prompt" rows="1" cols="1" placeholder="Ask codex..."></textarea>
+      <form id="generate-image-form">
+        <textarea name="prompt" rows="1" cols="1" placeholder="Enter your image description..."></textarea>
         <button type="submit"><img src="assets/send.png" alt="send" />
       </form>
     </div>
 
-    <script type="module" src="script.js"></script>
+    <script type="module" src="generate-image.js"></script>
   </body>
 </html>
